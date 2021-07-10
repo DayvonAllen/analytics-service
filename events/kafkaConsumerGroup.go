@@ -36,7 +36,7 @@ func KafkaConsumerGroup() {
 		log.Panicf("Error creating consumer group client: %v", err)
 	}
 
-	topics := []string{"user", "story"}
+	topics := []string{"user", "story", "event"}
 
 	wg := &sync.WaitGroup{}
 	wg.Add(1)
