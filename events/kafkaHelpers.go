@@ -79,6 +79,15 @@ func ProcessMessage(message domain.Message) error {
 		}
 	}
 
+	if message.ResourceType == "event" {
+		event := message.Event
+		err := repo.EventRepoImpl{}.Create(event)
+		if err != nil {
+			return err
+		}
+		return nil
+	}
+
 	return fmt.Errorf("cannot process this message")
 
 }
