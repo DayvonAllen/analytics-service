@@ -22,7 +22,7 @@ func KafkaConsumerGroup() {
 	config.Consumer.Group.Rebalance.Strategy = sarama.BalanceStrategyRoundRobin
 	config.Consumer.Offsets.Initial = sarama.OffsetOldest
 	group := "go-kafka-analytics-consumer"
-	brokers := []string{"localhost:19092", "localhost:29092", "localhost:39092"}
+	brokers := []string{"localhost:19092", "localhost:29092", "localhost:39092", "localhost:49092", "localhost:59092"}
 
 	consumer := Consumer{
 		ready: make(chan bool),
